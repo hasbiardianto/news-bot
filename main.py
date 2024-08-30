@@ -1,10 +1,14 @@
 import os
+from dotenv import load_dotenv
 import telebot
 import requests
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+load_dotenv()
+
 # Initialize the bot with your token
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+# BOT_TOKEN = os.environ.get('BOT_TOKEN')
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # API endpoint
